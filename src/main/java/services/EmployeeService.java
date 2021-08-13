@@ -30,6 +30,7 @@ public class EmployeeService extends ServiceBase {
 
         return EmployeeConverter.toViewList(employees);
     }
+
     /**
      * 従業員テーブルのデータの件数を取得し、返却する
      * @return 従業員テーブルのデータの件数
@@ -40,6 +41,7 @@ public class EmployeeService extends ServiceBase {
 
         return empCount;
     }
+
     /**
      * 社員番号、パスワードを条件に取得したデータをEmployeeViewのインスタンスで返却する
      * @param code 社員番号
@@ -65,6 +67,7 @@ public class EmployeeService extends ServiceBase {
         return EmployeeConverter.toView(e);
 
     }
+
     /**
      * idを条件に取得したデータをEmployeeViewのインスタンスで返却する
      * @param id
@@ -74,6 +77,7 @@ public class EmployeeService extends ServiceBase {
         Employee e = findOneInternal(id);
         return EmployeeConverter.toView(e);
     }
+
     /**
      * 社員番号を条件に該当するデータの件数を取得し、返却する
      * @param code 社員番号
@@ -87,6 +91,7 @@ public class EmployeeService extends ServiceBase {
                 .getSingleResult();
         return employees_count;
     }
+
     /**
      * 画面から入力された従業員の登録内容を元にデータを1件作成し、従業員テーブルに登録する
      * @param ev 画面から入力された従業員の登録内容
@@ -115,6 +120,7 @@ public class EmployeeService extends ServiceBase {
         //エラーを返却（エラーがなければ0件の空リスト）
         return errors;
     }
+
     /**
      * 画面から入力された従業員の更新内容を元にデータを1件作成し、従業員テーブルを更新する
      * @param ev 画面から入力された従業員の登録内容
@@ -166,6 +172,7 @@ public class EmployeeService extends ServiceBase {
         //エラーを返却（エラーがなければ0件の空リスト）
         return errors;
     }
+
     /**
      * idを条件に従業員データを論理削除する
      * @param id
@@ -186,6 +193,7 @@ public class EmployeeService extends ServiceBase {
         update(savedEmp);
 
     }
+
     /**
      * 社員番号とパスワードを条件に検索し、データが取得できるかどうかで認証結果を返却する
      * @param code 社員番号
@@ -209,6 +217,7 @@ public class EmployeeService extends ServiceBase {
         //認証結果を返却する
         return isValidEmployee;
     }
+
     /**
      * idを条件にデータを1件取得し、Employeeのインスタンスで返却する
      * @param id
@@ -219,6 +228,7 @@ public class EmployeeService extends ServiceBase {
 
         return e;
     }
+
     /**
      * 従業員データを1件登録する
      * @param ev 従業員データ
@@ -231,6 +241,7 @@ public class EmployeeService extends ServiceBase {
         em.getTransaction().commit();
 
     }
+
     /**
      * 従業員データを更新する
      * @param ev 画面から入力された従業員の登録内容

@@ -4,7 +4,11 @@ import javax.persistence.EntityManager;
 
 import utils.DBUtil;
 
+/**
+ * DB接続に関わる共通処理を行うクラス
+ */
 public class ServiceBase {
+
     /**
      * EntityManagerインスタンス
      */
